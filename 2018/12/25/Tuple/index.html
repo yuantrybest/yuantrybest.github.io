@@ -79,19 +79,19 @@
 
 
 
-<meta name="description" content="很多时候，我们需要把多个不同类型的值，打包成一个单位处理。例如，返回一个HTTP状态信息：  状态码: 200; 状态消息: HTTP OK 状态码: 404; 状态消息: File not found或者，返回一条数据库用户信息记录：姓名: Mars; 工号: 11; 电子邮件: 11@boxue.io。在Swift里，我们可以使用Tuple 来很方便的处理类似的问题。">
+<meta name="description" content="很多时候，我们需要把多个不同类型的值，打包成一个单位处理。例如，返回一个HTTP状态信息：  状态码: 200; 状态消息: HTTP OK 状态码: 404; 状态消息: File not found  或者，返回一条数据库用户信息记录：姓名: XXX; 工号: 11; 电子邮件: xxx@gmail.com。在Swift里，我们可以使用Tuple 来很方便的处理类似的问题。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="使用Tuple打包数据">
 <meta property="og:url" content="http://yoursite.com/2018/12/25/Tuple/index.html">
 <meta property="og:site_name" content="JLM">
-<meta property="og:description" content="很多时候，我们需要把多个不同类型的值，打包成一个单位处理。例如，返回一个HTTP状态信息：  状态码: 200; 状态消息: HTTP OK 状态码: 404; 状态消息: File not found或者，返回一条数据库用户信息记录：姓名: Mars; 工号: 11; 电子邮件: 11@boxue.io。在Swift里，我们可以使用Tuple 来很方便的处理类似的问题。">
+<meta property="og:description" content="很多时候，我们需要把多个不同类型的值，打包成一个单位处理。例如，返回一个HTTP状态信息：  状态码: 200; 状态消息: HTTP OK 状态码: 404; 状态消息: File not found  或者，返回一条数据库用户信息记录：姓名: XXX; 工号: 11; 电子邮件: xxx@gmail.com。在Swift里，我们可以使用Tuple 来很方便的处理类似的问题。">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://yoursite.com/2018/12/25/Tuple/packdata-by-tuple-1@2x.png">
 <meta property="og:image" content="http://yoursite.com/2018/12/25/Tuple/packdata-by-tuple-2@2x.png">
-<meta property="og:updated_time" content="2018-12-25T09:45:28.053Z">
+<meta property="og:updated_time" content="2018-12-25T09:53:14.025Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用Tuple打包数据">
-<meta name="twitter:description" content="很多时候，我们需要把多个不同类型的值，打包成一个单位处理。例如，返回一个HTTP状态信息：  状态码: 200; 状态消息: HTTP OK 状态码: 404; 状态消息: File not found或者，返回一条数据库用户信息记录：姓名: Mars; 工号: 11; 电子邮件: 11@boxue.io。在Swift里，我们可以使用Tuple 来很方便的处理类似的问题。">
+<meta name="twitter:description" content="很多时候，我们需要把多个不同类型的值，打包成一个单位处理。例如，返回一个HTTP状态信息：  状态码: 200; 状态消息: HTTP OK 状态码: 404; 状态消息: File not found  或者，返回一条数据库用户信息记录：姓名: XXX; 工号: 11; 电子邮件: xxx@gmail.com。在Swift里，我们可以使用Tuple 来很方便的处理类似的问题。">
 <meta name="twitter:image" content="http://yoursite.com/2018/12/25/Tuple/packdata-by-tuple-1@2x.png">
 
 
@@ -357,9 +357,9 @@
         <p>很多时候，我们需要把多个不同类型的值，打包成一个单位处理。例如，返回一个HTTP状态信息：</p>
 <ul>
 <li>状态码: 200; 状态消息: HTTP OK</li>
-<li>状态码: 404; 状态消息: File not found<br>或者，返回一条数据库用户信息记录：姓名: Mars; 工号: 11; 电子邮件: <a href="mailto:11@boxue.io" target="_blank" rel="noopener">11@boxue.io</a>。在Swift里，我们可以使用Tuple 来很方便的处理类似的问题。<a id="more"></a>
-</li>
+<li>状态码: 404; 状态消息: File not found</li>
 </ul>
+<p>或者，返回一条数据库用户信息记录：姓名: XXX; 工号: 11; 电子邮件: <a href="mailto:xxx@gmail.com" target="_blank" rel="noopener">xxx@gmail.com</a>。在Swift里，我们可以使用Tuple 来很方便的处理类似的问题。<br><a id="more"></a></p>
 <h2 id="定义一个Tuple"><a href="#定义一个Tuple" class="headerlink" title="定义一个Tuple"></a>定义一个Tuple</h2><p>我们使用下面的方式，来定义一个Tuple：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(value1, value2, value3...)</span><br></pre></td></tr></table></figure></p>
 <p>例如，定义我们开始提到的HTTP状态码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//: #### Define a tuple</span><br><span class="line"></span><br><span class="line">let success = (200, &quot;HTTP OK&quot;)</span><br><span class="line">let fileNotFound = (404, &quot;File not found&quot;)</span><br></pre></td></tr></table></figure></p>
 <p>我们还可以给Tuple中的每一个数据成员指定一个名字，例如，定义一个表达用户信息记录的Tuple：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">(name1: value1, name2: value2, name3: value3...)</span><br><span class="line"></span><br><span class="line">//: #### Define a tuple</span><br><span class="line">let me = (name: &quot;XXX&quot;, no: 11, email: &quot;xxx@gmail.com&quot;)</span><br></pre></td></tr></table></figure></p>
